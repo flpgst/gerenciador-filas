@@ -1,0 +1,30 @@
+type Pessoa {
+    _id: ID!
+    nome: String!
+    cpf: String
+    certidaoNascimento: String
+    nomeResponsavel: String!
+    cpfResponsavel: String!
+    telefoneResponsavel: String!
+}
+
+input PessoaInput {
+    nome: String!
+    cpf: String
+    certidaoNascimento: String
+    nomeResponsavel: String!
+    cpfResponsavel: String!
+    telefoneResponsavel: String!    
+}
+
+type Query {
+    pessoas: [Pessoa!]!
+    pessoa(id: ID!): Pessoa!
+}
+
+type Mutation {
+    createPessoa(data: PessoaInput!): Pessoa!
+    updatePessoa(id: ID, data: PessoaInput!): Pessoa!
+    deletePessoa(id: ID!): Boolean
+    
+}
