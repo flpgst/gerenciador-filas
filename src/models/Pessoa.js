@@ -3,22 +3,22 @@ import mongoose from 'mongoose'
 const Schema = new mongoose.Schema({
     nome: {
         type: String,
-        required
+        required:true
     },
     cpf: String,
     certidaoNascimento: String,
     nomeResponsavel: {
         type: String,
-        required
+        required: true
     },
     cpfResponsavel: {
         type: String,
-        required
+        required: true
     },
     telefoneResponsavel: {
         type: String,
-        required
+        required: true
     },
 })
 
-export default mongoose.Model('Pessoa', Schema)
+export default mongoose.model('Pessoa', Schema)

@@ -3,7 +3,7 @@ import mongoose from 'mongoose'
 const Schema = new mongoose.Schema({
     nome: {
         type: String,
-        required
+        required: true
     },
     responsavel: {
         type: mongoose.Schema.Types.ObjectId,
@@ -16,4 +16,4 @@ const Schema = new mongoose.Schema({
     
 })
 
-export default mongoose.Model('Entidade', Schema)
+export default mongoose.model('Entidade', Schema)
