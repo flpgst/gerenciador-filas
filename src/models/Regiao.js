@@ -10,6 +10,9 @@ const Schema = new mongoose.Schema({
         ref: 'Pessoa'
     }
     
+},{
+    timestamps:true,
+    collection: 'regioes'
 })
 
-export default mongoose.model('Regiao', Schema)
+export default mongoose.model('Inscricao', Schema)
