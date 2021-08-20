@@ -1,0 +1,30 @@
+type Inscricao {
+    _id: ID!
+    protocolo: String
+    inscrito: Pessoa!
+    entidade: Entidade
+    regiao: Regiao
+    chamado: Boolean
+    createdAt: String
+    updatedAt: String
+}
+
+input InscricaoInput {
+    protocolo: String
+    inscrito: ID!
+    entidade: ID
+    regiao: ID
+    chamado: Boolean
+}
+
+type Query {
+    inscricoes: [Inscricao!]!
+    inscricao(id: ID!): Inscricao!
+}
+
+type Mutation {
+    createInscricao(data: InscricaoInput!): Inscricao!
+    updateInscricao(id: ID, data: InscricaoInput!): Inscricao!
+    deleteInscricao(id: ID!): Boolean
+    
+}
