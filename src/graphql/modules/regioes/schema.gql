@@ -1,0 +1,22 @@
+type Regiao {
+    _id: ID!
+    nome: String!
+    responsavel: Pessoa!
+}
+
+input RegiaoInput {
+    nome: String!
+    responsavel: ID!
+}
+
+type Query {
+    regioes: [Regiao!]!
+    regiao(id: ID!): Regiao!
+}
+
+type Mutation {
+    createRegiao(data: RegiaoInput!): Regiao!
+    updateRegiao(id: ID, data: RegiaoInput!): Regiao!
+    deleteRegiao(id: ID!): Boolean
+    
+}
