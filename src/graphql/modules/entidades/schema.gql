@@ -1,0 +1,26 @@
+type Entidade {
+    _id: ID!
+    nome: String!
+    responsavel: Pessoa!
+    regiao: Regiao
+    
+}
+
+input EntidadeInput {
+    nome: String!
+    responsavel: ID!
+    regiao: ID
+    
+}
+
+type Query {
+    entidades: [Entidade!]!
+    entidade(id: ID!): Entidade!
+}
+
+type Mutation {
+    createEntidade(data: EntidadeInput!): Entidade!
+    updateEntidade(id: ID, data: EntidadeInput!): Entidade!
+    deleteEntidade(id: ID!): Boolean
+    
+}
