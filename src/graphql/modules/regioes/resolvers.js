@@ -3,7 +3,9 @@ import Pessoa from '../../../models/Pessoa';
 
 export default {
     Regiao: {
-        responsavel: (regiao) => Pessoa.findById(regiao.responsavel)
+        responsavel: (regiao) => Pessoa.findById(regiao.responsavel),
+        createdAt: ({createdAt}) => `${createdAt}`,
+        updatedAt: ({updatedAt}) => `${updatedAt}`
     },
     Query: {
         regioes: () => Regiao.find(),
